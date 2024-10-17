@@ -6,6 +6,7 @@ const {verifyPassword} = require("../lib/passportUtils")
 const verifyCallback = async (username, password, done) => {
     try {
         const user = await db.getUserCredentials(username);
+        console.log(user);
         if(!user) {
             return done(null, false, {message: "Incorrect username"});
         }

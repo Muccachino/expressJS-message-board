@@ -5,6 +5,16 @@
     <% if(locals.currentUser) { %>
         <h2>Welcome <%= currentUser.forename %> you are logged in as <%= currentUser.role%></h2>
     <% }%>
+
+    <% allMessages.forEach( message => { %>
+
+        <div>
+            <h3><%= message.title %></h3>
+            <p><%= message.message %></p>
+            <p>Created by <%= message.forename %> <%= message.surname %> on <%= message.date %></p>
+        </div>
+
+    <% }) %>
 </main>
 
 <%- include("partials/footer") %>
