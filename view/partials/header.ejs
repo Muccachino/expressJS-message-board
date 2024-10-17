@@ -13,8 +13,22 @@
             Message Board
         </h4>
         <ul>
+            <% if(locals.currentUser) { %>
+            <li><a href="/messages/new">New Message</a></li>
+            <% } %>
             <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
+            <li>
+                <% if(locals.currentUser) { %>
+                    <a href="/logout">Logout</a>
+                <% } else { %>
+                    <a href="/login">Login</a>
+                <% } %>
+            </li>
+            <% if(locals.currentUser) { %>
+                <% if(currentUser.role === "user") { %>
+                    <li><a href="/become-member">Become a Member</a></li>
+                <% } %>
+            <% } %>
         </ul>
     </nav>
 </header>

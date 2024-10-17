@@ -1,5 +1,5 @@
 const {body, validationResult} = require("express-validator")
-const db = require("../db/query")
+const db = require("../db/querys")
 const bcrypt = require("bcrypt");
 
 const alphaError = "must have Alphabetical characters."
