@@ -1,4 +1,5 @@
 const passport = require("passport");
+const {isMemberOrAdmin} = require("../middleware/authMiddleware");
 
 const indexRouter = require("express").Router();
 
@@ -28,6 +29,13 @@ indexRouter.get("/logout", (req, res) => {
         res.redirect("/login");
     });
 })
+
+//Become Member
+const becomeMemberController = require("../controllers/becomeMemberController");
+
+indexRouter.get("/member-codes",isMemberOrAdmin, becomeMemberController.memberCodesGet)
+indexRouter.get("/become-member", becomeMemberController.becomeMemberGet)
+indexRouter.post("/become-member", becomeMemberController.becomeMemberPost)
 
 
 module.exports = indexRouter;

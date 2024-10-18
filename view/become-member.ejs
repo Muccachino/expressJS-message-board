@@ -1,0 +1,13 @@
+<%- include("partials/header", {title: title}) %>
+
+<main>
+    <%- include('partials/errors') %>
+    <form action="/become-member" method="post">
+        <label for="memberCode">Member Code:</label>
+        <input type="text" name="memberCode" id="memberCode">
+
+        <input type="submit" value="Verify">
+    </form>
+</main>
+
+<%- include("partials/footer") %>

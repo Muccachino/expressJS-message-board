@@ -1,6 +1,13 @@
 <footer>
     <ul>
-        <li><a href="#">Become Member</a></li>
+        <% if(locals.currentUser) { %>
+            <% if(locals.currentUser.role === "members" || locals.currentUser.role === "admin") { %>
+                <li><a href="/member-codes">Member Codes</a></li>
+            <% } %>
+            <% if(locals.currentUser.role === "user") { %>
+                <li><a href="/become-member">Become Member</a></li>
+            <% } %>
+        <% } %>
         <li><a href="#">Terms of Service</a></li>
         <li><a href="#">Contact Us</a></li>
     </ul>
@@ -9,4 +16,5 @@
     </span>
 </footer>
 </body>
+<script src="/frontEndScripts.js" defer></script>
 </html>

@@ -25,6 +25,104 @@ header {
 
 main {
     padding: 2rem;
+
+    form {
+        display: flex;
+        padding: 1rem;
+        flex-direction: column;
+        max-width: 50%;
+        margin: auto;
+        box-shadow: 5px 5px 5px gray;
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input[type=text], input[type=email], input[type=password], textarea {
+            margin-bottom: 1rem;
+            line-height: 1.5rem;
+            padding: 5px 15px;
+            font-size: 1.1rem;
+        }
+
+        input[type=submit] {
+            padding: 15px;
+            background-color: deepskyblue;
+            border: none;
+            transition: background-color 200ms ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: dodgerblue;
+            }
+        }
+
+        p {
+            text-align: center;
+            margin-top: 1rem;
+
+            a {
+                color: deepskyblue;
+            }
+        }
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        max-width: 85%;
+        margin: 25px auto;
+        padding: 2rem;
+        box-shadow: 5px 5px 5px gray;
+        background-color: palegreen;
+
+        .title-date-container {
+            display: flex;
+            justify-content: space-between;
+
+            .message-title {
+                font-size: 1.5rem;
+            }
+            .message-date {
+                font-style: italic;
+            }
+        }
+
+        .message-text {
+            font-size: 1.1rem;
+        }
+        .author-delete-container {
+            display: flex;
+            justify-content: space-between;
+
+            .message-author {
+                font-style: italic;
+            }
+
+            #delete-btn {
+                font-size: 1.2rem;
+                cursor: pointer;
+            }
+        }
+
+
+    }
+
+    .member-code-list {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+
+        .member-code-element {
+            min-width: 70%;
+            margin: auto  auto 10px auto;
+            padding: 1rem;
+            font-size: 1.1rem;
+            box-shadow: 5px 5px 5px gray;
+            background-color: palegreen;
+        }
+
+    }
 }
 
 a {
@@ -32,12 +130,60 @@ a {
     color: black;
 }
 
+#delete-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    #delete-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        background-color: white;
+
+        .delete-buttons {
+            margin-top: 20px;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+
+            #delete-confirm,
+            #delete-cancel {
+                padding: 15px;
+                background-color: deepskyblue;
+                border: none;
+                transition: background-color 200ms ease-in-out;
+                cursor: pointer;
+                border-radius: 10px;
+
+                &:hover {
+                    background-color: dodgerblue;
+                }
+            }
+
+        }
+    }
+}
+
 footer {
+
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    height: 50px;
+    height: 80px;
     align-items: center;
+    background-color: limegreen;
 
     ul {
         display: flex;
